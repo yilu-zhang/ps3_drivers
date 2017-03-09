@@ -38,7 +38,7 @@ if pgrep ps3joy.py > /dev/null ||
    # this test is needed because python scripts are executed under the
    # generic process name 'python' so we have to test for ps3joy as a 
    # ros node.
-   rosnode list | grep "/ps3joy.py" ; then
+   rosnode list | grep "/ps3joy" ; then
 	echo "Error!? ps3joy is already running! Quitting starter"
 	exit 1
 else
