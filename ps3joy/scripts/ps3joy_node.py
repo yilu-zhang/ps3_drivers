@@ -366,7 +366,7 @@ class Diagnostics():
                                 4:"80% Charge",
                                 5:"100% Charge",
                                 238:"Charging"}
-        self.diag_pub = rospy.Publisher('/diagnostics', DiagnosticArray)
+        self.diag_pub = rospy.Publisher('/diagnostics', DiagnosticArray,queue_size=0)
         self.last_diagnostics_time = rospy.get_rostime()
 
     def publish(self, state):
