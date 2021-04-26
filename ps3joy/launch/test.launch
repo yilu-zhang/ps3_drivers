@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="ps3joy" type="ps3joyfake_node.py" name="ps3joyfake_node" respawn="true" respawn_delay="5" output="screen" >
+  </node>
+
+</launch>
