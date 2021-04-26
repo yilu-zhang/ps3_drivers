@@ -1,5 +1,7 @@
 <launch>
-  <node pkg="ps3joy" type="ps3joyfake_node.py" name="ps3joyfake_node" respawn="true" respawn_delay="5" output="screen" >
+  <node pkg="ps3joy" type="ps3joyfake_node.py" name="ps3joyfake_node" args="--inactivity-timeout=300 " respawn="true" respawn_delay="5" output="screen" >
+    <param name="inactivity-timeout" value="30" />
   </node>
 
 </launch>
+--inactivity-timeout=
