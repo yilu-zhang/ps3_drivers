@@ -1,7 +1,9 @@
 PS3游戏手柄控制智能小车
 
 启动：
+
 sudo bash
+
 roslaunch loui_robot_teleop ps3_to_loui.launch
 
 
