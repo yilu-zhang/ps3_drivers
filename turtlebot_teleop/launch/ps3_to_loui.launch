@@ -1,0 +1,19 @@
+<launch>
+   <!--  smooths inputs from cmd_vel_mux/input/teleop_raw to cmd_vel_mux/input/teleop -->
+  <!--include file="$(find turtlebot_teleop)/launch/includes/velocity_smoother.launch.xml"/-->
+
+  <node pkg="loui_robot_teleop" type="loui_robot_teleop_joy" name="loui_robot_teleop">
+    <param name="scale_angular" value="0.6"/>
+    <param name="scale_linear" value="0.6"/>
+    <param name="axis_deadman" value="8"/>
+    <param name="axis_linear" value="3"/>
+    <param name="axis_angular" value="2"/>
+    <param name="axis_enbar" value="12"/>
+    <param name="axis_disenbar" value="14"/>
+    <!--remap from="turtlebot_teleop_joystick/cmd_vel" to="teleop_velocity_smoother/raw_cmd_vel"/-->
+    <remap from="loui_robot_teleop/cmd_vel" to="loui_robot1/cmd_vel"/>
+    <remap from="loui_robot_teleop/joy" to="/joy"/>
+  </node>
+    <node pkg="ps3joy" type="ps3joyfake_node.py" name="ps3joyfake_node"/>
+    <!--node pkg="joy" type="joy_node" name="joystick"/-->
+</launch>
